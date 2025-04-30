@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h3>Numere Fibonacci între n1 și n2</h3>
+  n1: <input id="n1" type="number"><br>
+  n2: <input id="n2" type="number"><br>
+  <button onclick="fibonacci()">Afișează</button>
+  <p id="rezultat"></p>
+
+  <script>
+    function fibonacci() {
+      let n1 = Number(document.getElementById("n1").value);
+      let n2 = Number(document.getElementById("n2").value);
+      let a = 0, b = 1, f = [];
+      
+      while (a <= Math.max(n1, n2)) {
+        if (a >= Math.min(n1, n2)) f.push(a);
+        [a, b] = [b, a + b];
+      }
+
+      document.getElementById("rezultat").innerText = f.join(", ");
+    }
+  </script>
+</body>
+</html>
